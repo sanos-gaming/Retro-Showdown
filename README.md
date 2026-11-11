@@ -89,6 +89,11 @@ For spliting the gifs into frames, I used https://ezgif.com/split which not only
 Lastly, I would like to thank the [pret group](https://pret.github.io/) for their work on the [decompilation of pokemon emerald](https://github.com/pret/pokeemerald) which includes an explicit c script for every attack. Due to my lack of familiarity with C I ended up rarely using these scripts but they where very usefull for the most complex animations.  
 ~~Also I imagine that with a bit of work one could ask an AI to transcipt these animation script into PS animations...~~
 
+## Copyright
+IDK WHAT TO PUT HERE
+Dont steal. this code was made by me.
+All animations and sprites where created by Nintendo.
+
 ## Contact
 Discord: sanos3784  
 Smogon: [Sanos](https://www.smogon.com/forums/members/sanos.598305/)  
