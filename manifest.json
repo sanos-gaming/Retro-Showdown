@@ -1,0 +1,30 @@
+{
+  "name": "Test_extension",
+  "description": "Test",
+  "version": "0.1",
+  "manifest_version": 3,
+  "action": {
+    "default_icon": "ur_mom.png"
+  },
+  "content_scripts": [{
+      "js": [
+        "init.js"],
+      "run_at": "document_end",
+      "matches": ["*://play.pokemonshowdown.com/*"]
+    }],
+  "web_accessible_resources": [{  
+      "resources": ["fx/*.png",
+                    "fx/*.gif",
+                    "fx/moves/*.png",
+                    "fx/moves/*.gif",
+                    "scripts/test2.js",
+                    "scripts/animations.js",
+                    "scripts/move-anim.js",
+                    "image_sizes.json",
+                    "custom_style.css"],
+      "run_at": "document_end",
+      "matches": ["*://play.pokemonshowdown.com/*",
+                  "*://replay.poakemonshowdown.com/*",
+                  "*://smogtours.psim.us/*"]
+    }]
+}

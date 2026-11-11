@@ -1,0 +1,46 @@
+.rightbar, .leftbar {
+    background-color: rgba(255, 255, 255, 1); 
+    z-index: 11
+}
+
+.playbutton {
+    z-index: 11;
+}
+
+.statEffect {
+    position: absolute
+}
+
+.result{
+    z-index: 10;
+}
+
+.turn{
+    top: 0px;
+    left: 101px;
+    font-size: 11pt;
+}
+    
+.weather em {
+    margin: -17px 0 0 191px;
+}
+
+.battle, .innerbattle, .scrollable-battle-container {
+    width: 740px
+}
+
+.ps-room .battle-log, .ps-room .battle-log-add {
+    left: 740px
+}
+.ps-room .battle-userlist {
+    left: 741px
+}
+
+.fx img {
+    position: absolute;
+    image-rendering: pixelated;
+}
+
+.roomcounters .usercount {
+    filter: invert(1)
+}

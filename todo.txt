@@ -1,0 +1,154 @@
+x - change battle background and proportions
+o - add custom option pannel
+
+x - force graphical generation
+x - overwrite pokemon sprite creation
+x - overwrite hp bar code
+o - add status effects
+o - change text effects and police
+x - fix prev turn/first turn ui bug
+
+o - implement move animations
+o - add attack sounds (maybe from https://downloads.khinsider.com/game-soundtracks/album/pokemon-sfx-gen-3-attack-moves-rse-fr-lg)
+
+?????????????
+o - add begining of battle animations
+o - add pokemon entry animation (maybe from https://pkmn.net/?action=content&page=viewpage&id=8632 ?)
+
+bug list:
+o - rotate for showeffect canot be animated
+o - backgrounds break at lower resolutions
+o - still problems with sub - at least calm mind
+o - mega, tera problems (anim transform?)
+
+laggy animations:
+o - hidden power
+
+ANIM LIST :
+x - Switch In
+x - Switch Out
+x - Faint
+x - Burn
+~ - Sleep (same as rest)
+x - Para
+o - Freeze
+x - Poisoned
+x - Heal
+o - Confused
+c - Ability Message
+~ - Stat change (should change color depending on boost)
+x - Damage Indicator
+o - Weather
+
+
+MOVE LIST : (o : todo, x : animation done, X : all done, ~mostly done but some small details where skipped)
+x - Earthquake
+x - Hidden power
+~ - Thunderbolt (missing sparkles during the orb part)
+x - Spikes
+x - Rock Slide
+x - Ice Beam
+~ - Surf (the surf sprite should be animated)
+x - Toxic
+x - Protect
+x - Calm mind
+x - Roar
+x - Explosion
+~ - Meteor Mash (missing the blinking stars in the big star trail)
+x - Thunder Wave
+x - Hydro Pump
+x - Psychic
+x - Soft Boiled
+x - Subsitute
+~ - Dragon Dance (looks ugly)
+x - Focus Punch
+x - Rapid Spin
+x - Seismic Toss
+~ - Fire Blast (wrong angles in the final blast)
+x - Baton Pass
+x - Recover
+~ - Wish (same as meteor mash, more noticable here)
+x - Brick Break
+x - Leech Seed
+o - Will o Wisp
+~ - Rest (the Z should slightly rotate, impossible with jquery)
+x - Body Slam
+x - Fire Punch
+x - Crunch
+x - Ice Punch
+x - Giga Drain
+x - Drill Peck
+x - Double Edge
+x - Flamethrower
+o - Knock Off https://youtu.be/ApEqeUUuOOk?t=597s
+x - Slack off
+o - Thunder
+~ - Shadow Ball (the ball has to turn, ugly)
+o - Dragon Claw
+o - Swords Dance
+o - Extreme Speed
+x - Self Destruct
+o - Superpower
+~ - Curse (missing the special stats change effect + ugly)
+o - Refresh
+o - Sleep Talk
+o - Hyper Beam
+x - Pursuit
+o - Heal Bell
+o - Return
+o - Thief
+o - Sky Uppercut
+o - Sludge Bomb
+o - Encore
+o - Sunny day
+o - Mach Puch
+o - Taunt
+o - Megahorn
+o - Lovely Kiss
+o - Sleep Powder
+o - Stun Powder
+o - Hypnosis
+o - Whirlwind
+o - Growth
+o - Drill Peck
+o - Dynamic Punch
+o - Cross Chop
+o - Belly Drum
+o - Nightmare
+o - Blizzard
+o - Reflect
+o - Light Screen
+o - Sing
+o - Clamp
+o - Counter
+o - Agility
+o - Night Shade
+o - Mega Drain
+o - Amnesia
+o - Leaf Blade
+o - Iron Defence
+o - Future Sight
+o - Trick
+o - Low Kick
+o - Facade
+o - Moonlight
+o - Teleport
+o - Heat Wave
+o - Pain Split
+o - Aromatherapy
+o - Haze
+o - Bulk up
+o - Eruption
+~ - Beat up (showdown only animates 1 hit, and also in game hit have an altearning animation, would need to toy around in resultanim for that)
+o - High Jump Kick
+o - Fake out
+o - Waterfall
+o - Glare
+o - Tail Glow
+o - Water Spout
+o - Overheat
+o - Solar Beam
+o - Endeavor
+o - Doom Desire
+o - Icicle Spear
+o - Rock Blast
