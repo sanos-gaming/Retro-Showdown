@@ -19,6 +19,9 @@ In order to install the extension localy,
     * This will install the extension untill you close Firefox. Do this again every time you want to use it again!
 * For other browsers, I have not tried myself. I think that it should woks, so just look up how to install extensions from your computer and you should be good. Don't hesitate to contact me if you need help!
 
+You will know if the extension is successfully installed if the meloetta on the main menu looks *evil*. ![example](whatever/Menu-example.png)
+
+Here is what a battle should look like : ![battle-example](whatever/Battle-example.png)
 
 ## State of the project
 The extension is in eraly release. Its main feature (the battle animations) is mostly complete and bug free but it is far from finished. You can see all the planned features in the [to do file](todo.txt).  
@@ -35,6 +38,7 @@ Here I list the main issues with the project that i want to have fixed before ex
 * **Only standard single battles are supported.** While the animations should work in every format (not tested outside of single battles), I have not yet implemeted any code to handle more than one pokemon on each side, leading for example to the healtbars overlapping each others. Other different formats such as blitz also cause some visual glitches.
 * **No customisation.** Right now, every battle without exception gets affected by the extension. I want to add a way for users to select when the animations should be changed. I also would like to implement a speed slider, because I know that those animations are very slow.
 * **Bugs with showdown specific UI.** I have not yet found a way to properely implement all the UI that showdown adds as QOL (visible hasards, turn counter, display of currenltly active field conditions, ...). For now the in-game UI conflicts with the PS UI, making some effects invisible. Team preview is also quite ugly and would need to be remade.
+* Some precise positions change out at different resolutions, most noticably the hp bars (see above picture).
 
 #### Workarounds
 You can change the speed of the animations by modifying the `frame` variable : click F12 to open the inspect menu, then go to the `Console` tab. Here, do not get intimidated by the huge amont of text and just click on the empty space next to the `>` at the bottom of the window and type `frame /= 2` if you want to multiply the speed by 2, or `frame *= 2` if you want to divide the speed by 2. This will go away on page refresh.  
