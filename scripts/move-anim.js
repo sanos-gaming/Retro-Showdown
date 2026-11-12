@@ -1,5 +1,370 @@
 //Here we will rewrite the code of move animations
 
+// these two are just to prevent the bug where the background is given the wrong position by the animation 
+
+BattleMoveAnims.earthpower= {
+    anim(scene, [attacker, defender]) {
+        scene.$bg.animate({
+            top: 0,
+            bottom: 0,
+        }, 75).animate({
+            top: -10,
+        }, 100).animate({
+            top: 0,
+        }, 100).animate({
+            top: -5,
+        }, 100).animate({
+            top: 0,
+        }, 100).animate({
+            top: -5,
+        }, 100).animate({
+            top: 0,
+        }, 100).animate({
+            top: -2.5,
+        }, 100).animate({
+            top: 0,
+        }, 100).animate({
+            top: -2.5,
+        }, 100).animate({
+            top: 0,
+        }, 100);
+
+        scene.showEffect('fireball', {
+            x: defender.x + 10,
+            y: defender.y - 35,
+            z: defender.z,
+            scale: 0,
+            opacity: 0.8,
+        }, {
+            scale: 3,
+            opacity: 0,
+        }, 'linear');
+        scene.showEffect('rock3', {
+            x: defender.x + 10,
+            y: defender.y - 35,
+            z: defender.z,
+            scale: 0.4,
+            opacity: 0.6,
+            time: 0,
+        }, {
+            x: defender.x + 30,
+            y: defender.y + 50,
+            scale: 0.5,
+            opacity: 0,
+            time: 300,
+        }, 'linear', 'fade');
+        scene.showEffect('rock3', {
+            x: defender.x + 10,
+            y: defender.y - 35,
+            z: defender.z,
+            scale: 0.4,
+            opacity: 0.6,
+            time: 100,
+        }, {
+            x: defender.x - 10,
+            y: defender.y + 50,
+            scale: 0.5,
+            opacity: 0,
+            time: 400,
+        }, 'linear', 'fade');
+        scene.showEffect('rock3', {
+            x: defender.x + 40,
+            y: defender.y - 35,
+            z: defender.z,
+            scale: 0.4,
+            opacity: 0.6,
+            time: 200,
+        }, {
+            x: defender.x + 35,
+            y: defender.y + 50,
+            scale: 0.5,
+            opacity: 0,
+            time: 500,
+        }, 'linear', 'fade');
+
+        scene.showEffect('fireball', {
+            x: defender.x - 40,
+            y: defender.y - 35,
+            z: defender.z,
+            scale: 0,
+            opacity: 0.8,
+            time: 150,
+        }, {
+            scale: 3,
+            opacity: 0,
+        }, 'linear');
+        scene.showEffect('rock3', {
+            x: defender.x - 40,
+            y: defender.y - 35,
+            z: defender.z,
+            scale: 0.4,
+            opacity: 0.6,
+            time: 150,
+        }, {
+            x: defender.x - 60,
+            y: defender.y + 45,
+            scale: 0.5,
+            opacity: 0,
+            time: 450,
+        }, 'linear', 'fade');
+        scene.showEffect('rock3', {
+            x: defender.x - 40,
+            y: defender.y - 35,
+            z: defender.z,
+            scale: 0.4,
+            opacity: 0.6,
+            time: 250,
+        }, {
+            x: defender.x - 20,
+            y: defender.y + 45,
+            scale: 0.5,
+            opacity: 0,
+            time: 550,
+        }, 'linear', 'fade');
+        scene.showEffect('rock3', {
+            x: defender.x - 40,
+            y: defender.y - 35,
+            z: defender.z,
+            scale: 0.4,
+            opacity: 0.6,
+            time: 350,
+        }, {
+            x: defender.x - 35,
+            y: defender.y + 45,
+            scale: 0.5,
+            opacity: 0,
+            time: 650,
+        }, 'linear', 'fade');
+
+        scene.showEffect('fireball', {
+            x: defender.x + 40,
+            y: defender.y - 35,
+            z: defender.z,
+            scale: 0,
+            opacity: 0.8,
+            time: 300,
+        }, {
+            scale: 3,
+            opacity: 0,
+        }, 'linear');
+        scene.showEffect('rock3', {
+            x: defender.x + 40,
+            y: defender.y - 35,
+            z: defender.z,
+            scale: 0.4,
+            opacity: 0.6,
+            time: 300,
+        }, {
+            x: defender.x + 60,
+            y: defender.y + 65,
+            scale: 0.5,
+            opacity: 0,
+            time: 600,
+        }, 'linear', 'fade');
+        scene.showEffect('rock3', {
+            x: defender.x + 40,
+            y: defender.y - 35,
+            z: defender.z,
+            scale: 0.4,
+            opacity: 0.6,
+            time: 400,
+        }, {
+            x: defender.x + 20,
+            y: defender.y + 65,
+            scale: 0.5,
+            opacity: 0,
+            time: 700,
+        }, 'linear', 'fade');
+        scene.showEffect('rock3', {
+            x: defender.x + 40,
+            y: defender.y - 35,
+            z: defender.z,
+            scale: 0.4,
+            opacity: 0.6,
+            time: 500,
+        }, {
+            x: defender.x + 30,
+            y: defender.y + 65,
+            scale: 0.5,
+            opacity: 0,
+            time: 800,
+        }, 'linear', 'fade');
+
+        defender.delay(50);
+        defender.anim({
+            y: defender.y - 10,
+            time: 75,
+        });
+        defender.anim({
+            y: defender.y + 10,
+            time: 100,
+        });
+        defender.anim({
+            y: defender.y - 7,
+            time: 100,
+        });
+        defender.anim({
+            y: defender.y + 7,
+            time: 100,
+        });
+        defender.anim({
+            y: defender.y - 7,
+            time: 100,
+        });
+        defender.anim({
+            y: defender.y + 7,
+            time: 100,
+        });
+        defender.anim({
+            y: defender.y - 2,
+            time: 100,
+        });
+        defender.anim({
+            y: defender.y + 2,
+            time: 100,
+        });
+        defender.anim({
+            y: defender.y,
+            time: 100,
+        });
+    },
+}
+
+BattleMoveAnims.bulldoze = {
+    anim(scene, [attacker, ...defenders]) {
+        scene.$bg.delay(275);
+        scene.$bg.animate({
+            top: 0,
+        }, 75).animate({
+            top: -10,
+        }, 100).animate({
+            top: -0,
+        }, 100).animate({
+            top: -5,
+        }, 100).animate({
+            top: 0,
+        }, 100).animate({
+            top: -5,
+        }, 100).animate({
+            top: 0,
+        }, 100).animate({
+            top: -2.5,
+        }, 100).animate({
+            top: 0,
+        }, 100).animate({
+            top: -2.5,
+        }, 100).animate({
+            top: 0,
+        }, 100);
+
+        attacker.anim({
+            y: attacker.y + 20,
+            time: 175,
+        }, 'swing');
+        attacker.anim({
+            y: attacker.y,
+            time: 125,
+        }, 'accel');
+        attacker.anim({
+            y: attacker.y - 10,
+            yscale: 1,
+            time: 75,
+        });
+        attacker.anim({
+            y: attacker.y + 10,
+            yscale: 0.9,
+            time: 100,
+        });
+        attacker.anim({
+            y: attacker.y - 5,
+            yscale: 1,
+            time: 100,
+        });
+        attacker.anim({
+            y: attacker.y + 5,
+            time: 100,
+        });
+        attacker.anim({
+            y: attacker.y - 5,
+            time: 100,
+        });
+        attacker.anim({
+            y: attacker.y + 5,
+            time: 100,
+        });
+        attacker.anim({
+            y: attacker.y - 5,
+            time: 100,
+        });
+        attacker.anim({
+            y: attacker.y + 5,
+            time: 100,
+        });
+        attacker.anim({
+            y: attacker.y - 2,
+            time: 100,
+        });
+        attacker.anim({
+            y: attacker.y + 2,
+            time: 100,
+        });
+        attacker.anim({
+            y: attacker.y,
+            time: 100,
+        });
+
+        for (const defender of defenders) {
+            defender.delay(275);
+            defender.anim({
+                y: defender.y - 10,
+                time: 75,
+            });
+            defender.anim({
+                y: defender.y + 10,
+                time: 100,
+            });
+            defender.anim({
+                y: defender.y - 5,
+                time: 100,
+            });
+            defender.anim({
+                y: defender.y + 5,
+                time: 100,
+            });
+            defender.anim({
+                y: defender.y - 5,
+                time: 100,
+            });
+            defender.anim({
+                y: defender.y + 5,
+                time: 100,
+            });
+            defender.anim({
+                y: defender.y - 5,
+                time: 100,
+            });
+            defender.anim({
+                y: defender.y + 5,
+                time: 100,
+            });
+            defender.anim({
+                y: defender.y - 2,
+                time: 100,
+            });
+            defender.anim({
+                y: defender.y + 2,
+                time: 100,
+            });
+            defender.anim({
+                y: defender.y,
+                time: 100,
+            });
+        }
+        scene.wait(325);
+    },
+}
+
+//
 sourceURL = document.currentScript.dataset.sourceURL
 if (!sourceURL) console.error("FUCK")
 
@@ -3398,371 +3763,165 @@ BattleMoveAnims.curse = {
     }
 }
 
+BattleEffects.g3_woworb1 = {
+    url: sourceURL + "fx/moves/wow-orb1.png",
+    w: 16, h: 16
+}
+BattleEffects.g3_woworb2 = {
+    url: sourceURL + "fx/moves/wow-orb2.png",
+    w: 16, h: 16
+}
+BattleEffects.g3_woworb3 = {
+    url: sourceURL + "fx/moves/wow-orb3.png",
+    w: 16, h: 16
+}
+BattleEffects.g3_woworb4 = {
+    url: sourceURL + "fx/moves/wow-orb4.png",
+    w: 16, h: 16
+}
+BattleEffects.g3_woworb5 = {
+    url: sourceURL + "fx/moves/wow-orb5.png",
+    w: 16, h: 16
+}
+BattleEffects.g3_woworb6 = {
+    url: sourceURL + "fx/moves/wow-orb6.png",
+    w: 16, h: 16
+}
+BattleEffects.g3_woworb7 = {
+    url: sourceURL + "fx/moves/wow-orb7.png",
+    w: 16, h: 16
+}
+BattleEffects.g3_wowfire1 = {
+    url: sourceURL + "fx/moves/wow-fire1.png",
+    w: 32, h: 32
+}
+BattleEffects.g3_wowfire2 = {
+    url: sourceURL + "fx/moves/wow-fire2.png",
+    w: 32, h: 32
+}
+BattleEffects.g3_wowfire3 = {
+    url: sourceURL + "fx/moves/wow-fire3.png",
+    w: 32, h: 32
+}
+BattleEffects.g3_wowfire4 = {
+    url: sourceURL + "fx/moves/wow-fire4.png",
+    w: 32, h: 32
+}
+BattleMoveAnims.willowisp = {
+    anim(scene, [attacker, defender]) {
+        objects = []
+        for (var i=0;i<4;i++){
+            $effect = $(`<img src=""/>`);
+            $effect.css({
+                display: "none",
+                imageRendering: "pixelated",
+                zIndex: 8,
+                position: "absolute"
+            })
+            scene.$fx.append($effect);
+            $effect = scene.$fx.children().last();
+            objects.push($effect)
+        }
+
+        function f(x) {
+            if (x<0.1) return x/4
+            return (x-0.1)*9.75/9 + 0.025
+        }
+        console.log(scene)
+
+        const t0 = performance.now()
+        function tick(now) {
+            
+            const t = (now - t0)/frame - 10
+            if (t<0) {
+                requestAnimationFrame(tick)
+                return
+            }
+            
+            for (var i=0;i<objects.length;i++) {
+                var ti = t - [0,3,5,8][i]
+                var $effect = objects[i]
+                var effect = BattleEffects["g3_woworb"+(i==0?(Math.round(t/2)%4)+1:Math.min((i+4),6))] //the 1st orb cycles, the last 2 are the same and the n°7 is unused??
+                $effect[0].src = effect.url
+                var T = f(ti/75)
+                var pos0 = {
+                    x: defender.x * T + attacker.x * (1-T),
+                    y: (defender.y + defender.z==0?0:15) * T + (attacker.y + (attacker.y==0?-10:15) + 10) * (1-T),
+                    z: defender.z * T + attacker.z * (1-T),
+                }
+                $effect.css({
+                    ...scene.pos({
+                        x: pos0.x + 10 * Math.sin(T*3 * 2 * Math.PI),
+                        y: pos0.y,
+                        z: pos0.z
+                    },effect),
+                    display: ((ti >= 0) & (ti < 68)) ? "block" : "none"
+                })
+            }
+
+            if (t<80) requestAnimationFrame(tick)
+        }
+        requestAnimationFrame(tick)
+
+        defender.delay(87 * frame)
+        for (var i=0;i<6;i++) defender.anim({x: defender.behindx(-5), time: frame}).anim({x: defender.behindx(10), time: frame})
+        defender.anim({time: frame})
+
+        y0 = defender.y + (defender.z==200?10:-10)
+        for (var i = 0; i<6;i++){
+            scene.showEffect("g3_wowfire1",{
+                x: defender.behindx(4 * Math.cos((i/6) *2*Math.PI)) ,
+                y: y0 - 4 * Math.sin((i/6) *2*Math.PI)/10,
+                z: defender.z,
+                scale: 1.4,
+                time: 87 * frame
+            }, {
+                x: defender.behindx(8 * Math.cos((i/6) *2*Math.PI)) ,
+                y: y0 - 8 * Math.sin((i/6) *2*Math.PI)/10,
+                time: 89 * frame
+            },"","",{imageRendering: "pixelated", zIndex: (defender.z==0 ? 5:0)+(Math.cos((i/6) *2*Math.PI)<0?3:2)}).animate({opacity:0},0)
+
+            scene.showEffect("g3_wowfire2",{
+                x: defender.behindx(12 * Math.cos((i/6) *2*Math.PI)) ,
+                y: y0 - 12 * Math.sin((i/6) *2*Math.PI)/10,
+                z: defender.z,
+                scale: 1.4,
+                time: 89 * frame
+            }, {
+                x: defender.behindx(16 * Math.cos((i/6+1/12) *2*Math.PI)) ,
+                y: y0 + 16 * Math.sin((i/6+1/12) *2*Math.PI)/10,
+                time: 91 * frame
+            },"","",{imageRendering: "pixelated", zIndex: (defender.z==0 ? 5:0)+(Math.cos((i/6 +1/12) *2*Math.PI)<0?3:2)}).animate({opacity:0},0)
+
+            scene.showEffect("g3_wowfire3",{
+                x: defender.behindx(16 * Math.cos((i/6 + 1/12) *2*Math.PI)) ,
+                y: y0 - 16 * Math.sin((i/6 + 1/12) *2*Math.PI)/10,
+                z: defender.z,
+                scale: 1.4,
+                time: 91 * frame
+            }, {
+                x: defender.behindx(26 * Math.cos((i/6+5/12) *2*Math.PI)) ,
+                y: y0 - 26 * Math.sin((i/6+5/12) *2*Math.PI)/10,
+                time: 94 * frame
+            },"","",{imageRendering: "pixelated", zIndex: (defender.z==0 ? 5:0)+(Math.cos((i/6+5/12) *2*Math.PI)<0?3:2)}).animate({opacity:0},0)
+
+            scene.showEffect("g3_wowfire4",{
+                x: defender.behindx(26 * Math.cos((i/6 + 5/12) *2*Math.PI)) ,
+                y: y0 - 26 * Math.sin((i/6 + 5/12) *2*Math.PI)/10,
+                z: defender.z,
+                scale: 1.4,
+                time: 94 * frame
+            }, {
+                x: defender.behindx(30 * Math.cos((i/6+6/12) *2*Math.PI)) ,
+                y: y0 - 30 * Math.sin((i/6+6/12) *2*Math.PI)/10,
+                time: 96 * frame
+            },"","",{imageRendering: "pixelated", zIndex: (defender.z==0 ? 5:0)+(Math.cos((i/6+6/12) *2*Math.PI)<0?3:2)}).animate({opacity:0},0)
+        }
+        
+
+        scene.wait(100 * frame)
+    }
+}
 
 // BattleMoveAnims.knockoff 
 // BattleOtherAnims.itemoff
-
-
-// these two are just to prevent the bug where the background is given the wrong position by the animation 
-
-BattleMoveAnims.earthpower= {
-    anim(scene, [attacker, defender]) {
-        scene.$bg.animate({
-            top: 0,
-            bottom: 0,
-        }, 75).animate({
-            top: -10,
-        }, 100).animate({
-            top: 0,
-        }, 100).animate({
-            top: -5,
-        }, 100).animate({
-            top: 0,
-        }, 100).animate({
-            top: -5,
-        }, 100).animate({
-            top: 0,
-        }, 100).animate({
-            top: -2.5,
-        }, 100).animate({
-            top: 0,
-        }, 100).animate({
-            top: -2.5,
-        }, 100).animate({
-            top: 0,
-        }, 100);
-
-        scene.showEffect('fireball', {
-            x: defender.x + 10,
-            y: defender.y - 35,
-            z: defender.z,
-            scale: 0,
-            opacity: 0.8,
-        }, {
-            scale: 3,
-            opacity: 0,
-        }, 'linear');
-        scene.showEffect('rock3', {
-            x: defender.x + 10,
-            y: defender.y - 35,
-            z: defender.z,
-            scale: 0.4,
-            opacity: 0.6,
-            time: 0,
-        }, {
-            x: defender.x + 30,
-            y: defender.y + 50,
-            scale: 0.5,
-            opacity: 0,
-            time: 300,
-        }, 'linear', 'fade');
-        scene.showEffect('rock3', {
-            x: defender.x + 10,
-            y: defender.y - 35,
-            z: defender.z,
-            scale: 0.4,
-            opacity: 0.6,
-            time: 100,
-        }, {
-            x: defender.x - 10,
-            y: defender.y + 50,
-            scale: 0.5,
-            opacity: 0,
-            time: 400,
-        }, 'linear', 'fade');
-        scene.showEffect('rock3', {
-            x: defender.x + 40,
-            y: defender.y - 35,
-            z: defender.z,
-            scale: 0.4,
-            opacity: 0.6,
-            time: 200,
-        }, {
-            x: defender.x + 35,
-            y: defender.y + 50,
-            scale: 0.5,
-            opacity: 0,
-            time: 500,
-        }, 'linear', 'fade');
-
-        scene.showEffect('fireball', {
-            x: defender.x - 40,
-            y: defender.y - 35,
-            z: defender.z,
-            scale: 0,
-            opacity: 0.8,
-            time: 150,
-        }, {
-            scale: 3,
-            opacity: 0,
-        }, 'linear');
-        scene.showEffect('rock3', {
-            x: defender.x - 40,
-            y: defender.y - 35,
-            z: defender.z,
-            scale: 0.4,
-            opacity: 0.6,
-            time: 150,
-        }, {
-            x: defender.x - 60,
-            y: defender.y + 45,
-            scale: 0.5,
-            opacity: 0,
-            time: 450,
-        }, 'linear', 'fade');
-        scene.showEffect('rock3', {
-            x: defender.x - 40,
-            y: defender.y - 35,
-            z: defender.z,
-            scale: 0.4,
-            opacity: 0.6,
-            time: 250,
-        }, {
-            x: defender.x - 20,
-            y: defender.y + 45,
-            scale: 0.5,
-            opacity: 0,
-            time: 550,
-        }, 'linear', 'fade');
-        scene.showEffect('rock3', {
-            x: defender.x - 40,
-            y: defender.y - 35,
-            z: defender.z,
-            scale: 0.4,
-            opacity: 0.6,
-            time: 350,
-        }, {
-            x: defender.x - 35,
-            y: defender.y + 45,
-            scale: 0.5,
-            opacity: 0,
-            time: 650,
-        }, 'linear', 'fade');
-
-        scene.showEffect('fireball', {
-            x: defender.x + 40,
-            y: defender.y - 35,
-            z: defender.z,
-            scale: 0,
-            opacity: 0.8,
-            time: 300,
-        }, {
-            scale: 3,
-            opacity: 0,
-        }, 'linear');
-        scene.showEffect('rock3', {
-            x: defender.x + 40,
-            y: defender.y - 35,
-            z: defender.z,
-            scale: 0.4,
-            opacity: 0.6,
-            time: 300,
-        }, {
-            x: defender.x + 60,
-            y: defender.y + 65,
-            scale: 0.5,
-            opacity: 0,
-            time: 600,
-        }, 'linear', 'fade');
-        scene.showEffect('rock3', {
-            x: defender.x + 40,
-            y: defender.y - 35,
-            z: defender.z,
-            scale: 0.4,
-            opacity: 0.6,
-            time: 400,
-        }, {
-            x: defender.x + 20,
-            y: defender.y + 65,
-            scale: 0.5,
-            opacity: 0,
-            time: 700,
-        }, 'linear', 'fade');
-        scene.showEffect('rock3', {
-            x: defender.x + 40,
-            y: defender.y - 35,
-            z: defender.z,
-            scale: 0.4,
-            opacity: 0.6,
-            time: 500,
-        }, {
-            x: defender.x + 30,
-            y: defender.y + 65,
-            scale: 0.5,
-            opacity: 0,
-            time: 800,
-        }, 'linear', 'fade');
-
-        defender.delay(50);
-        defender.anim({
-            y: defender.y - 10,
-            time: 75,
-        });
-        defender.anim({
-            y: defender.y + 10,
-            time: 100,
-        });
-        defender.anim({
-            y: defender.y - 7,
-            time: 100,
-        });
-        defender.anim({
-            y: defender.y + 7,
-            time: 100,
-        });
-        defender.anim({
-            y: defender.y - 7,
-            time: 100,
-        });
-        defender.anim({
-            y: defender.y + 7,
-            time: 100,
-        });
-        defender.anim({
-            y: defender.y - 2,
-            time: 100,
-        });
-        defender.anim({
-            y: defender.y + 2,
-            time: 100,
-        });
-        defender.anim({
-            y: defender.y,
-            time: 100,
-        });
-    },
-}
-
-BattleMoveAnims.bulldoze = {
-    anim(scene, [attacker, ...defenders]) {
-        scene.$bg.delay(275);
-        scene.$bg.animate({
-            top: 0,
-        }, 75).animate({
-            top: -10,
-        }, 100).animate({
-            top: -0,
-        }, 100).animate({
-            top: -5,
-        }, 100).animate({
-            top: 0,
-        }, 100).animate({
-            top: -5,
-        }, 100).animate({
-            top: 0,
-        }, 100).animate({
-            top: -2.5,
-        }, 100).animate({
-            top: 0,
-        }, 100).animate({
-            top: -2.5,
-        }, 100).animate({
-            top: 0,
-        }, 100);
-
-        attacker.anim({
-            y: attacker.y + 20,
-            time: 175,
-        }, 'swing');
-        attacker.anim({
-            y: attacker.y,
-            time: 125,
-        }, 'accel');
-        attacker.anim({
-            y: attacker.y - 10,
-            yscale: 1,
-            time: 75,
-        });
-        attacker.anim({
-            y: attacker.y + 10,
-            yscale: 0.9,
-            time: 100,
-        });
-        attacker.anim({
-            y: attacker.y - 5,
-            yscale: 1,
-            time: 100,
-        });
-        attacker.anim({
-            y: attacker.y + 5,
-            time: 100,
-        });
-        attacker.anim({
-            y: attacker.y - 5,
-            time: 100,
-        });
-        attacker.anim({
-            y: attacker.y + 5,
-            time: 100,
-        });
-        attacker.anim({
-            y: attacker.y - 5,
-            time: 100,
-        });
-        attacker.anim({
-            y: attacker.y + 5,
-            time: 100,
-        });
-        attacker.anim({
-            y: attacker.y - 2,
-            time: 100,
-        });
-        attacker.anim({
-            y: attacker.y + 2,
-            time: 100,
-        });
-        attacker.anim({
-            y: attacker.y,
-            time: 100,
-        });
-
-        for (const defender of defenders) {
-            defender.delay(275);
-            defender.anim({
-                y: defender.y - 10,
-                time: 75,
-            });
-            defender.anim({
-                y: defender.y + 10,
-                time: 100,
-            });
-            defender.anim({
-                y: defender.y - 5,
-                time: 100,
-            });
-            defender.anim({
-                y: defender.y + 5,
-                time: 100,
-            });
-            defender.anim({
-                y: defender.y - 5,
-                time: 100,
-            });
-            defender.anim({
-                y: defender.y + 5,
-                time: 100,
-            });
-            defender.anim({
-                y: defender.y - 5,
-                time: 100,
-            });
-            defender.anim({
-                y: defender.y + 5,
-                time: 100,
-            });
-            defender.anim({
-                y: defender.y - 2,
-                time: 100,
-            });
-            defender.anim({
-                y: defender.y + 2,
-                time: 100,
-            });
-            defender.anim({
-                y: defender.y,
-                time: 100,
-            });
-        }
-        scene.wait(325);
-    },
-}

@@ -23,6 +23,7 @@ o - mega, tera problems (anim transform?)
 
 laggy animations:
 o - hidden power
+o - rock slide
 
 ANIM LIST :
 x - Switch In
@@ -70,7 +71,7 @@ x - Recover
 ~ - Wish (same as meteor mash, more noticable here)
 x - Brick Break
 x - Leech Seed
-o - Will o Wisp
+~ - Will o Wisp (far from perfect, zindex problems in the fire part)
 ~ - Rest (the Z should slightly rotate, impossible with jquery)
 x - Body Slam
 x - Fire Punch

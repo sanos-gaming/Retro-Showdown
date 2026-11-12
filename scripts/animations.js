@@ -128,7 +128,7 @@ PokemonSprite.prototype.animSummon = function(pokemon, slot, instant){
         this.$el.css('display', 'block');
         this.animReset();
         this.resetStatbar(pokemon);
-        // if (pokemon.hasVolatile('substitute' as ID)) this.animSub(true);
+        if (pokemon.hasVolatile('substitute')) this.animSub(true);
         return;
     }
     if (this.cryurl) {

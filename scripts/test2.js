@@ -402,19 +402,18 @@ try {SEEKTURN = Battle.prototype.seekTurn} catch {"Function seekturn not found"}
 if (SEEKTURN){
     Battle.prototype.seekTurn = function (turn){
         console.log(this.scene.$fx)
-        // this.scene.$fx = $('<div></div>');
         this.scene.$bg[0].style.filter = "none"
 
         SEEKTURN.apply(this, arguments)
     }
 }
 BattleScene.prototype.startAnimations = function() {
-		this.$fx.empty();
-        this.$bgEffect.empty();
-		this.activeAnimations = $();
-		this.timeOffset = 0;
-		this.minDelay = 0;
-	}
+    this.$fx.empty();
+    this.$bgEffect.empty();
+    this.activeAnimations = $();
+    this.timeOffset = 0;
+    this.minDelay = 0;
+}
 
 
 BattleScene.prototype.message = function (message) {
