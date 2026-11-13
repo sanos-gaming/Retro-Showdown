@@ -3923,5 +3923,142 @@ BattleMoveAnims.willowisp = {
     }
 }
 
+BattleEffects.g3_claw1 = {
+    url: sourceURL + "fx/moves/claw1.png",
+    w: 32, h: 32
+}
+BattleEffects.g3_claw2 = {
+    url: sourceURL + "fx/moves/claw2.png",
+    w: 32, h: 32
+}
+BattleEffects.g3_claw3 = {
+    url: sourceURL + "fx/moves/claw3.png",
+    w: 32, h: 32
+}
+BattleEffects.g3_claw4 = {
+    url: sourceURL + "fx/moves/claw4.png",
+    w: 32, h: 32
+}
+BattleEffects.g3_claw5 = {
+    url: sourceURL + "fx/moves/claw5.png",
+    w: 32, h: 32
+}
+BattleMoveAnims.dragonclaw = {
+    anim(scene, [attacker, defender]) {
+        attacker.delay(6 * frame)
+        for (var i=0;i<7;i++) attacker.anim({y: attacker.y - 5, time: frame}).anim({time: frame})
+
+        atckTint = animTint(306, attacker.$el,scene, 200)
+        var attacker2 = Object.create(Object.getPrototypeOf(attacker));
+        Object.assign(attacker2, attacker);
+        attacker2.$el = $(atckTint)
+        // if (attacker.$sub) attacker2.delay(scene.timeOffset)
+        attacker2.delay(20 * frame)
+
+        attacker2.anim({opacity: 0.5, time: 9 * frame})
+        attacker.delay(7 * frame)
+
+        attacker.anim({x: attacker.behindx(-50), time: 3 * frame}).delay(frame).anim({time: 3 * frame}).anim({x: attacker.behindx(-50), time: 3 * frame}).delay(frame).anim({time: 3 * frame})
+        attacker2.anim({x: attacker.behindx(-50),opacity: 0.5, time: 3 * frame}).delay(frame).anim({time: 3 * frame,opacity: 0.5}).anim({x: attacker.behindx(-50),opacity: 0.5, time: 3 * frame}).delay(frame).anim({opacity: 0.5,time: 3 * frame})
+
+        attacker2.delay(10 * frame).anim({opacity: 0, time: 13 * frame})
+
+        defender.delay(32*frame)
+        for (var i = 0; i<3; i++) defender.anim({y: defender.y - 5, time: frame}).anim({time: frame})
+        defender.delay(2 * frame)
+        for (var i = 0; i<3; i++) defender.anim({y: defender.y - 5, time: frame}).anim({time: frame})
+
+        for (var i=0; i<4;i++){
+            scene.showEffect("g3_claw1",{
+                x: defender.x - (i<2?1:-1) * 15,
+                y: defender.y + (defender.z==200?5:-10) + (i%2==0?30:0),
+                z: defender.z,
+                scale: 1.5,
+                time: (i<2? 32 : 40) * frame
+            }, {time: (1 + (i<2? 32 : 40)) * frame},"","",{imageRendering: "pixelated", zIndex: (defender.z==0 ? 8:3), transform: `scaleX(${i<2?1:-1})`}).animate({opacity:0},0)
+
+            scene.showEffect("g3_claw2",{
+                x: defender.x - (i<2?1:-1) * 15,
+                y: defender.y + (defender.z==200?5:-10) + (i%2==0?30:0),
+                z: defender.z,
+                scale: 1.5,
+                time: (1 + (i<2? 32 : 40)) * frame
+            }, {time: (3 + (i<2? 32 : 40)) * frame},"","",{imageRendering: "pixelated", zIndex: (defender.z==0 ? 8:3), transform: `scaleX(${i<2?1:-1})`}).animate({opacity:0},0)
+
+            scene.showEffect("g3_claw3",{
+                x: defender.x - (i<2?1:-1) * 15,
+                y: defender.y + (defender.z==200?5:-10) + (i%2==0?30:0),
+                z: defender.z,
+                scale: 1.5,
+                time: (3 + (i<2? 32 : 40)) * frame
+            }, {time: (5 + (i<2? 32 : 40)) * frame},"","",{imageRendering: "pixelated", zIndex: (defender.z==0 ? 8:3), transform: `scaleX(${i<2?1:-1})`}).animate({opacity:0},0)
+
+            scene.showEffect("g3_claw4",{
+                x: defender.x - (i<2?1:-1) * 15,
+                y: defender.y + (defender.z==200?5:-10) + (i%2==0?30:0),
+                z: defender.z,
+                scale: 1.5,
+                time: (5 + (i<2? 32 : 40)) * frame
+            }, {time: (7 + (i<2? 32 : 40)) * frame},"","",{imageRendering: "pixelated", zIndex: (defender.z==0 ? 8:3), transform: `scaleX(${i<2?1:-1})`}).animate({opacity:0},0)
+
+            scene.showEffect("g3_claw5",{
+                x: defender.x - (i<2?1:-1) * 15,
+                y: defender.y + (defender.z==200?5:-10) + (i%2==0?30:0),
+                z: defender.z,
+                scale: 1.5,
+                time: (7 + (i<2? 32 : 40)) * frame
+            }, {time: (9 + (i<2? 32 : 40)) * frame},"","",{imageRendering: "pixelated", zIndex: (defender.z==0 ? 8:3), transform: `scaleX(${i<2?1:-1})`}).animate({opacity:0},0)
+        }
+
+        objects = []
+        for (var i=0;i<4;i++){
+            for (var j=0;j<6;j++){
+                $effect = $(`<img src=""/>`);
+                $effect.css({
+                    display: "none",
+                    imageRendering: "pixelated",
+                    zIndex: 8,
+                    position: "absolute"
+                })
+                scene.$fx.append($effect);
+                $effect = scene.$fx.children().last();
+                objects.push({$effect, y0: [-10, -20, -25, -20, -15, -30][j], phi0: [0.05, 0.02, 0.015, 0.005, 0.05, 0.01][j]})
+            }
+        }
+
+        const t0 = performance.now()
+        function tick(now) {
+            const t = (now - t0)/frame - 5
+
+            for (var i=0;i<objects.length;i++) {
+                var ti = t - i*2
+                if (ti<0) continue
+                var $effect = objects[i].$effect
+                var effect = BattleEffects["g3_burn"+(Math.round(ti/2)%5+1)]
+                $effect[0].src = effect.url
+
+                $effect.css({
+                    ...scene.pos({
+                        x: attacker.x + 50 * Math.sin((i%2==0?1:-1)*(ti/10 + objects[i].phi0) * 2*Math.PI),
+                        y: attacker.y + (attacker.z==200?15:0) + 60 * ti/14  + objects[i].y0,
+                        z: attacker.z,
+                        scale: 1.2
+                    },effect),
+                    display: ((ti >= 0) & (ti < 14)) ? "block" : "none"
+                })
+            }
+
+            if (t<80) requestAnimationFrame(tick)
+        }
+        requestAnimationFrame(tick)
+
+
+        
+
+        scene.wait(80 * frame)
+    }
+}
+
+
 // BattleMoveAnims.knockoff 
 // BattleOtherAnims.itemoff

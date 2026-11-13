@@ -71,7 +71,7 @@ x - Recover
 ~ - Wish (same as meteor mash, more noticable here)
 x - Brick Break
 x - Leech Seed
-~ - Will o Wisp (far from perfect, zindex problems in the fire part)
+~ - Will o Wisp (far from perfect, zindex problems in the fire part, https://youtu.be/7jGhMtIlZqU?t=483)
 ~ - Rest (the Z should slightly rotate, impossible with jquery)
 x - Body Slam
 x - Fire Punch
