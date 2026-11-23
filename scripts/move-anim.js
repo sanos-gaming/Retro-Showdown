@@ -1,6 +1,9 @@
 //Here we will rewrite the code of move animations
+//Everything here is a rewrite of functions defined in src/battle-animations-moves.ts
+//Starts off with a few scripts for some often used effects that can be easely accessed
+//Read more about how animations are handled in the quick guide to PS code
 
-// these two are just to prevent the bug where the background is given the wrong position by the animation 
+// these two first anims are just to prevent the bug where the background is given the wrong position by the animation 
 
 BattleMoveAnims.earthpower= {
     anim(scene, [attacker, defender]) {
@@ -379,7 +382,6 @@ function setFilter(filter) {
 } //thought of by the gpt. not proud of that but that works at least
 
 function blink(pokemon){
-    BattleSound.externalSound("https://vgmtreasurechest.com/soundtracks/pokemon-sfx-gen-3-attack-moves-rse-fr-lg/ozirislf/Hit%20Normal%20Damage.mp3")
     for (var i=0;i<4;i++){
         pokemon.anim({
             opacity:0,
@@ -614,6 +616,8 @@ BattleEffects.g3_pokeballfullopen ={
 
 BattleMoveAnims.earthquake={
     anim(scene, [attacker, ...defenders]) {
+        console.log(scene)
+        console.log(attacker)
         //When looping our animations, instead of a if check we just do both shake motions every iteration and we divide the amount of loops by two  
         var bg = animTint(0,scene.$bg,scene)
         bg[0].style.opacity = 1
